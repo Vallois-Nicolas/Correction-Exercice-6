@@ -1,48 +1,76 @@
+/** Le main container, qui est la division principale, devra faire la taille de l'écran (height à 100vh) et devra être aussi large que l'écran (width à 100%)
+    Ce container devra être flexible afin d'empiler les éléments tel qu'on le souhaite.
+    Quant à sa direction de flex, elle devra être définie à "column" afin que les éléments enfant de ce container s'empile les uns en dessous des autres. */
+
 #main-container {
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
+
+/** La first division, correspondant à la première ligne de rectangles, devra prendre toute la largeur disponible provenant du main container (100% de width)
+    Mais également avoir une hauteur d'environ 15% de la taille disponible donnée par le main container (on prend donc 15% des 100vh du main container)
+    Cette division devra également être flexible, mais contrairement au container principal, celle-ci devra être en ligne (row) afin qu les rectangles se placent les uns derrière les autres. */
 #firstDivision {
     width: 100%;
     height: 15%;
     display: flex;
     flex-direction: row;
 }
+
+/** Le premier rectangle, se trouvant dans la première division, devra prendre environ 85% de la taille disponible donnée par la firstDivision (donc 85% des 100% des 100vh disponibles)
+    Pour la hauteur, elle devra prendre 100% de la place disponible (100% des 15% donnés par la first division)
+    Puis on change la couleur de fond avec la propriété background-color */
 #firstRectangle {
     width: 85%;
     height: 100%;
     background-color: #2ECC71;
 }
+/** Le second rectangle prendra le reste de la largeur disponible (100% - 85% du premier rectangle = 15%)
+    Il prendra 100% de la hauteur disponible provenant de la first division */
 #secondRectangle {
     width: 15%;
     height: 100%;
     background-color: #2980B9;
 }
+/** La seconde division, se situant en-dessous de la première grâce au flex column du main container, devra elle aussi être flexible,
+    elle accueillera les éléments en ligne, donc les uns derrière les autres.
+    Elle prendra la totalité de la largeur disponible (100% de width) et 35% de la hauteur disponible (35% des 100vh donnés par le main container) */
 #secondDivision {
     width: 100%;
     height: 35%;
     display: flex;
     flex-direction: row;
 }
+/** Le troisième rectangle est le premier élément que la seconde division comprendra.
+    Étant donné que ce rectangle aura à sa droite les autres rectangles, il ne prendra que 1/3 de la largeur disponible (34% des 100% donnés par le main container)
+    En revanche, il prendra bien les 100% de hauteur disponibles (100% des 35% de la seconde division) */
 #thirdRectangle {
     width: 34%;
     height: 100%;
     background-color: #E74C3C;
 }
+/** Cette sous-division correspond à la grosse divison qui accueillera les 5 rectangles à droite du rectangle rouge,
+    elle prendra donc le reste de la largeur disponible (100% - 34% du rectangle rouge = 66%).
+    La hauteur sera également réglée à 100% pour prendre toute la place disponible.
+    Par contre, sa flex direction devra être en colonne afin de mettre les futures sous-divisions les unes en dessous des autres. */
 #subDivisionSecondDivison {
     width: 66%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
+/** La première sous-division à l'intérieur de la sous-division principale aura pour but d'encadrer les 2 rectangles de la première ligne.
+    Elle devra donc prendre la totalité de la largeur disponible (100% width) mais ne devra prendre que 50% de hauteur afin de laisser l'autre moitié pour la seconde ligne.
+    Elle devra également être flexible mais aura sa flex direction en ligne afin d'empiler les rectangles qu'elle contiendra les uns derrière les autres. */
 #firstSubDivision {
     width: 100%;
     height: 50%;
     display: flex;
     flex-direction: row;
 }
+/* Les rectangles 4 et 5 correspondent aux 2 rectangles qui seront à l'intérieur de la première sous-division */
 #fourthRectangle {
     width: 50%;
     height: 100%;
@@ -53,12 +81,17 @@
     height: 100%;
     background-color: #95A5A6;
 }
+/** La seconde sous-division, qui viendra en-dessous de la première sous-division, contiendra les 3 derniers rectangles sur les 5 situés à droite du rectangle rouge.
+    On réglera donc sa largeur à 100% afin qu'elle prenne l'entiéreté de la place disponible.
+    Sa hauteur correspondra au reste laissé par la première sous-division (50%),
+    et sa flex direction sera en ligne afin de mettre les rectangles les uns derrière les autres */
 #secondSubDivision {
     width: 100%;
     height: 50%;
     display: flex;
     flex-direction: row;
 }
+/* Les rectangles 6, 7 et 8 correspondent aux 3 rectangles à l'intérieur de la seconde sous-division */
 #sixthRectangle {
     flex: 1;
     height: 100%;
@@ -74,6 +107,8 @@
     height: 100%;
     background-color: #D35400;
 }
+/*  Le dernier rectangle quant à lui, devra prendre l'entiéreté de la largeur disponible (100% de la width du main container)
+    Il prendra également le reste de la hauteur disponible (100% - 15% de la première division - 35% de la seconde division = 50%) */
 #ninethRectangle {
     width: 100%;
     height: 50%;

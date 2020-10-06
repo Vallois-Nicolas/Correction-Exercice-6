@@ -8,8 +8,10 @@
 </head>
 <body>
 
+    <!-- Ce main container correspond à la div comportant tout l'ensemble de la structure à reproduire -->
     <div id="main-container">
 
+        <!-- La first division correspond à la première ligne contenant les 2 premiers rectangles -->
         <div id="firstDivision">
 
             <div id="firstRectangle"></div>
@@ -17,16 +19,22 @@
             
         </div>
 
+        <!-- La second division correspond à la seconde ligne, qui elle, contiendra le rectangle rouge et les 5 autres rectangles à sa droite -->
         <div id="secondDivision">
 
+            <!-- Cette div correspond au rectangle rouge -->
             <div id="thirdRectangle"></div>
+            <!-- Celle-ci correspond à la sous-division qui contiendra les 5 autres rectangles -->
             <div id="subDivisionSecondDivison">
 
+                <!-- Dans la sous-division, on trouvera 2 autres sous-divisions, afin de créer 2 lignes différentes sur lesquelles seront placés les 2 lignes de rectangles -->
+                <!-- La first sub division correspond donc à la première sous-division contenant les 2 rectangles de la première ligne à droite du rectangle rouge -->
                 <div id="firstSubDivision">
                     <div id="fourthRectangle"></div>
                     <div id="fifthRectangle"></div>
                 </div>
 
+                <!-- Et cette second sub division quant à elle correspondra à la deuxième ligne contenant les 3 autres rectangles -->
                 <div id="secondSubDivision">
                     <div id="sixthRectangle"></div>
                     <div id="seventhRectangle"></div>
@@ -36,6 +44,7 @@
             </div>
         </div>
         
+        <!-- Et pour finir, on retrouve le dernier des rectangles qui prend toute la largeur du main container -->
         <div id="ninethRectangle"></div>
     </div>
 </body>
